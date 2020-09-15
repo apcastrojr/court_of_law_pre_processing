@@ -1,5 +1,6 @@
 # court_of_law_pre_processing
 The pre-processing for terms in Court of Law text documents.
+Under GNU General Public License v 3.0.
 
 For not finding specific libraries in Python or Ruby in Portuguese language that implement stopwords, cleaning and stemming for texts judged by the court of justice, the ruby class was built with the methods to meet this need. This class is made available for the purpose of sharing them with other researchers or entities that need these functions.
 
