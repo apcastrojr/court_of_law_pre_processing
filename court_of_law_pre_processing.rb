@@ -76,6 +76,19 @@ class CourtOfLawPreProcessing
      novo_texto = novo_texto.gsub(' federais ',' federal ')
      novo_texto = novo_texto.gsub(' sociais ',' social ')
 
+     novo_texto = novo_texto.gsub(' systems ',' system ')
+     novo_texto = novo_texto.gsub(' problems ',' problem ')
+     novo_texto = novo_texto.gsub(' objects ',' object ')
+     novo_texto = novo_texto.gsub(' results ',' result ')
+     novo_texto = novo_texto.gsub(' images ',' image ')
+     novo_texto = novo_texto.gsub(' transactions ',' transaction ')
+     novo_texto = novo_texto.gsub(' songs ',' song ')
+     novo_texto = novo_texto.gsub(' researchs ',' research ')
+     novo_texto = novo_texto.gsub(' animals ',' animal ')
+     novo_texto = novo_texto.gsub(' goats ',' goat ')
+     novo_texto = novo_texto.gsub(' resources ',' resource ')
+     novo_texto = novo_texto.gsub(' vocals ',' vocal ')
+
      return novo_texto
   end
 
@@ -99,6 +112,11 @@ class CourtOfLawPreProcessing
 
   def stopwords(texto)
      novo_texto = texto
+
+     #artigos, preposições, pronomes, numeral
+     ['the','of','and','to','in','that','is','we','are','this','be','on','by','an','a','with','from','can','it','which','these','such','not','or','also','between','using','use','has','have','based','our','used','use','at','how','their','more','s','show','some','about','re','you','may','will','i','all','div','they','t','than','if','hi','into','them','your','c','first','only','been','what','who','each','last','being','all','k','one','we','when','its','but','both','two','the','pm','her','was','like','he','she','out','his','my','well','other'].map do |token|
+        novo_texto = novo_texto.gsub(" #{token} ",' ')
+     end
 
      #artigos, preposições, pronomes, numeral
      ['a','à','às','as','à','ás','jamais','agora','ainda','alguém','algum','alguma''algumas','alguns','ampla','amplas','amplo','amplos','ante','antes','ao','aos','após','aquela','aquelas','aquele','aqueles','aquilo','as','até','através','cada','coisa','coisas','com','como','contra','contudo','da','daquele','daqueles','das','de','dela','delas','dele','deles','depois','desse modo','deste modo','dessa','dessas','desse','desses','desta forma','desta','destas','deste','deste','destes','disto','dito','do','dos','e','é','e','ela','elas','ele','eles','em','enquanto','entre','essa','essas','esse','esses','esta','estas','este','estes','eu','feita','feitas','feito','feitos','for','grande','grandes','isso','isto','já','la','la','lá','lhe','lhes','lo','mas','me','mesma','mesmas','mesmo','mesmos','meu','meus','minha','minhas','muita','muitas','muito','muitos','na','não','nas','nem','nenhum','nessa','nessas','nesta','nestas','ninguém','no','nos','nós','nossa','nossas','nosso','nossos','num','numa','nunca','o','os','ou','outra','outras','outro','outros','outrossim','para','pela','pelas','pelo','pelos','pequena','pequenas','pequeno','pequenos','per','perante','pois','porque','pouca','poucas','pouco','poucos','primeiro','primeiros','própria','próprias','próprio','próprios','quais','qual','quando','quanto','quantos','que','quem','são','se','seja','sejam','sem','sempre','seu','seus','si','sido','só','sob','sobre','sua','suas','talvez','também','tampouco','te','teu','teus','ti','tido','toda','todas','todavia','todo','todos','tu','tua','tuas','tudo','última','últimas','último','últimos','um','uma','umas','uns','vez','vos','vós','dois','duas','três','treis','demais','além','alem','mais','assim sendo','assim','ja','nestes termos','nestes','qualquer','respectiva','respectivo','respectivas','respectivos','por'].map do |token|
